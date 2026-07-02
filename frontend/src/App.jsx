@@ -4,6 +4,8 @@ import ChatFeed from './components/ChatFeed';
 import ChatInput from './components/ChatInput';
 import './App.css';
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+
 export default function App() {
   const [messages, setMessages] = useState([]);
   const [inputText, setInputText] = useState("");
@@ -35,7 +37,7 @@ export default function App() {
   useEffect(() => {
     const fetchHealth = async () => {
       try {
-        const res = await fetch("http://localhost:8000/health");
+        const res = await fetch(`${API_BASE_URL}/health`);
         if (res.ok) {
           const data = await res.json();
           setApiStatus({
@@ -96,7 +98,7 @@ export default function App() {
     let retrievedSources = [];
 
     try {
-      const response = await fetch("http://localhost:8000/query", {
+      const response = await fetch(`${API_BASE_URL}/query`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query: text })
@@ -248,7 +250,7 @@ export default function App() {
     });
 
     try {
-      await fetch("http://localhost:8000/feedback", {
+      await fetch(`${API_BASE_URL}/feedback`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -270,7 +272,7 @@ export default function App() {
     formData.append("file", file);
     
     try {
-      const response = await fetch("http://localhost:8000/upload-pdf", {
+      const response = await fetch(`${API_BASE_URL}/upload-pdf`, {
         method: "POST",
         body: formData
       });
@@ -303,7 +305,7 @@ export default function App() {
     setUrlInput("");
     
     try {
-      const response = await fetch("http://localhost:8000/scrape-link", {
+      const response = await fetch(`${API_BASE_URL}/scrape-link`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ url })
