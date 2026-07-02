@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Brand Typography - Poppins */
+  --font-heading: 'Poppins', 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Premium Light Theme Variables */
+  --bg-primary: #f8fafc;       /* Crisp light slate/gray background */
+  --bg-secondary: #ffffff;     /* Pure white for panels and inputs */
+  --bg-card: rgba(255, 255, 255, 0.85); /* White glassmorphism card */
+  --bg-card-hover: rgba(241, 245, 249, 0.95);
+  
+  /* Brand Complementary Accents */
+  --accent-primary: #001051;   /* Brand Navy */
+  --accent-secondary: #2563EB; /* Brand Blue */
+  --accent-glow: rgba(37, 99, 235, 0.15); /* Soft Blue Glow */
+  --accent-success: #10b981;
+  --accent-warning: #f59e0b;
+  --accent-danger: #ef4444;
+  
+  /* Typography Colors */
+  --text-primary: #0f172a;     /* Deep slate for primary text */
+  --text-secondary: #475569;   /* Muted slate for descriptions */
+  --text-muted: #94a3b8;
+  
+  /* Borders and Focus States */
+  --border-color: rgba(0, 16, 81, 0.08); /* Very soft navy border */
+  --border-focus: rgba(37, 99, 235, 0.4);   /* Soft blue border on focus */
+  
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 16, 81, 0.05), 0 1px 2px -1px rgba(0, 16, 81, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 16, 81, 0.04), 0 4px 6px -4px rgba(0, 16, 81, 0.04);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--accent-primary);
+  letter-spacing: -0.01em;
+}
+
+/* Custom Scrollbars for Light Mode */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 16, 81, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 16, 81, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 5px var(--accent-glow); }
+  50% { box-shadow: 0 0 20px var(--accent-glow); }
+  100% { box-shadow: 0 0 5px var(--accent-glow); }
+}
+
+@keyframes wave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Glassmorphism Classes for Light Mode */
+.glass {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+}

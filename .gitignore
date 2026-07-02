@@ -1,0 +1,94 @@
+# ==============================================================================
+# KGP Insight: Git Ignore Configuration
+# ==============================================================================
+
+# --- Python Standard ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# --- Python Environments ---
+.env
+.env/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# --- Node / React Standard ---
+node_modules/
+jspm_packages/
+web_modules/
+.npm
+.eslintcache
+.stylelintcache
+.cache
+.parcel-cache
+.next
+.nuxt
+.docusaurus
+.expo/
+.yarn-integrity
+
+# --- Frontend Build Output ---
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/coverage/
+
+# --- Playwright Browser Binaries & Test Reports ---
+test-results/
+playwright-report/
+blob-report/
+playwright/.local-browsers/
+
+# --- OS & IDE Standard ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*~
+
+# --- System Logs ---
+*.log
+logs/
+/home/chakradhar/.gemini/antigravity-cli/brain/
+
+# --- Raw Data Artifacts ---
+data/*.pdf
+data/*.zip
+
+# --- Local Project Specs & Logs ---
+architecture.md
+chat.md
